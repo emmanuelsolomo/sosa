@@ -29,6 +29,7 @@ ACTIVE_SEPS=\
 
 # Install dependencies
 WORKDIR /code
+RUN ls -la
 RUN pip install pipenv; pipenv install --dev --system
 
 # collect static assets

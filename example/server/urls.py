@@ -13,7 +13,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog', include('blog.urls'))
 """
 from django.urls import path, include
-
+from django.contrib import admin
 import polaris.urls
 from .views import all_fields_form_view, confirm_email, skip_confirm_email, log_callback
 
@@ -23,4 +23,5 @@ urlpatterns = [
     path("skip_confirm_email", skip_confirm_email, name="skip_confirm_email"),
     path("onChangeCallback", log_callback),
     path("", include(polaris.urls)),
+    path("admin/", admin.site.urls),
 ]
